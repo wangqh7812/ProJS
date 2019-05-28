@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.3.3</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function outputNumbers(count){
+
+            (function () {
+                for (var i=0; i < count; i++){
+                    console.log("a=" + i);
+                }
+            })();
+
+            console.log("b=" + i);   //错误，i没有定义
+        }
+
+        outputNumbers(5);
+    </script>
+</body>
+</html>
