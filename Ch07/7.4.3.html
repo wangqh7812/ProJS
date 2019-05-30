@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.4.3</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function BaseComponent() {
+
+        }
+
+        function OtherComponent() {
+
+        }
+
+        var app = function () {
+            var components = [];
+
+            components.push(new BaseComponent());
+
+            return {
+                getComponentCount: function () {
+                    return components.length;
+                },
+
+                registerComponent: function (component) {
+                    if (typeof component == "object") {
+                        components.push(component);
+                    }
+                }
+            };
+        }();
+
+        app.registerComponent(new OtherComponent());
+        console.log(app.getComponentCount());
+    </script>
+</body>
+</html>
